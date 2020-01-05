@@ -57,6 +57,7 @@ extension NasaEndpoints: Endpoint {
         case .getRoverPhotos(let sol, let apiKey):
             return [
                 URLQueryItem(name: "sol", value: String(sol)),
+//                URLQueryItem(name: "camera", value: "FHAZ,RHAZ"),
                 URLQueryItem(name: "api_key", value: apiKey)]
         }
     }

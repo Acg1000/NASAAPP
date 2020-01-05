@@ -9,25 +9,39 @@
 import Foundation
 import UIKit
 
-class RoverData: Decodable {
+class RoverPhoto: NASAData {
     let id: Int
-//    let imageURL: String
     let imgSrc: URL
     let earthDate: String
+    let camera: RoverCamera
+    let rover: Rover
+    
+    var image: UIImage? = nil
+    var imageState = ImageState.placeholder
     
     init() {
         self.id = 0
-//        self.imageURL = ""
         self.imgSrc = URL(string: "")!
         self.earthDate = ""
+        self.camera = RoverCamera(name: "")
+        self.rover = Rover(name: "")
     }
     
     enum CodingKeys: String, CodingKey {
         case id
         case imgSrc
-//        case imageURL = "img_src"
         case earthDate
+        case camera
+        case rover
     }
+}
+
+struct RoverCamera: Decodable {
+    let name: String
+}
+
+struct Rover: Decodable {
+    let name: String
 }
 
 //extension RoverData {

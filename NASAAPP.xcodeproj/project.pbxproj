@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB2154D923C2857E006A7966 /* PostcardFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2154D823C2857E006A7966 /* PostcardFormatterViewController.swift */; };
 		FB50AF9C23BE7D4C00B6C7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */; };
 		FB50AF9E23BE7D4C00B6C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9D23BE7D4C00B6C7F9 /* SceneDelegate.swift */; };
 		FB50AFA323BE7D4C00B6C7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA123BE7D4C00B6C7F9 /* Main.storyboard */; };
 		FB50AFA523BE7D4D00B6C7F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA423BE7D4D00B6C7F9 /* Assets.xcassets */; };
 		FB50AFA823BE7D4D00B6C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA623BE7D4D00B6C7F9 /* LaunchScreen.storyboard */; };
 		FBB2C81023C1AD6500A7CA10 /* RoverAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C80F23C1AD6500A7CA10 /* RoverAPIClient.swift */; };
-		FBC347A723BEA54200F77CBE /* RoverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347A623BEA54200F77CBE /* RoverData.swift */; };
+		FBB2C81223C1AE0B00A7CA10 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C81123C1AE0B00A7CA10 /* ImageDownloader.swift */; };
+		FBB2C81423C1B13900A7CA10 /* NASAData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C81323C1B13900A7CA10 /* NASAData.swift */; };
+		FBB2C81623C1B83A00A7CA10 /* RoverImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C81523C1B83A00A7CA10 /* RoverImageCollectionViewController.swift */; };
+		FBB2C81823C1B8F200A7CA10 /* RoverImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C81723C1B8F200A7CA10 /* RoverImageCell.swift */; };
+		FBB2C81A23C1C12600A7CA10 /* PendingOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C81923C1C12600A7CA10 /* PendingOperations.swift */; };
+		FBC347A723BEA54200F77CBE /* RoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347A623BEA54200F77CBE /* RoverPhoto.swift */; };
 		FBC347AB23BEADFD00F77CBE /* InitialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347AA23BEADFD00F77CBE /* InitialPageViewController.swift */; };
 		FBC347AD23BEB04200F77CBE /* SinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */; };
 		FBC347AF23BEB1E900F77CBE /* PageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347AE23BEB1E900F77CBE /* PageEnum.swift */; };
@@ -23,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB2154D823C2857E006A7966 /* PostcardFormatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostcardFormatterViewController.swift; sourceTree = "<group>"; };
 		FB50AF9823BE7D4C00B6C7F9 /* NASAAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB50AF9D23BE7D4C00B6C7F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +38,12 @@
 		FB50AFA723BE7D4D00B6C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB50AFA923BE7D4D00B6C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBB2C80F23C1AD6500A7CA10 /* RoverAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverAPIClient.swift; sourceTree = "<group>"; };
-		FBC347A623BEA54200F77CBE /* RoverData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverData.swift; sourceTree = "<group>"; };
+		FBB2C81123C1AE0B00A7CA10 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		FBB2C81323C1B13900A7CA10 /* NASAData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAData.swift; sourceTree = "<group>"; };
+		FBB2C81523C1B83A00A7CA10 /* RoverImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverImageCollectionViewController.swift; sourceTree = "<group>"; };
+		FBB2C81723C1B8F200A7CA10 /* RoverImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverImageCell.swift; sourceTree = "<group>"; };
+		FBB2C81923C1C12600A7CA10 /* PendingOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOperations.swift; sourceTree = "<group>"; };
+		FBC347A623BEA54200F77CBE /* RoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverPhoto.swift; sourceTree = "<group>"; };
 		FBC347AA23BEADFD00F77CBE /* InitialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPageViewController.swift; sourceTree = "<group>"; };
 		FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePageViewController.swift; sourceTree = "<group>"; };
 		FBC347AE23BEB1E900F77CBE /* PageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageEnum.swift; sourceTree = "<group>"; };
@@ -87,8 +99,9 @@
 		FBC347A223BEA4BF00F77CBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FBC347A623BEA54200F77CBE /* RoverData.swift */,
+				FBC347A623BEA54200F77CBE /* RoverPhoto.swift */,
 				FBC347AE23BEB1E900F77CBE /* PageEnum.swift */,
+				FBB2C81323C1B13900A7CA10 /* NASAData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -97,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				FB50AFA123BE7D4C00B6C7F9 /* Main.storyboard */,
+				FBB2C81723C1B8F200A7CA10 /* RoverImageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,6 +120,8 @@
 			children = (
 				FBC347AA23BEADFD00F77CBE /* InitialPageViewController.swift */,
 				FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */,
+				FBB2C81523C1B83A00A7CA10 /* RoverImageCollectionViewController.swift */,
+				FB2154D823C2857E006A7966 /* PostcardFormatterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -124,6 +140,8 @@
 				FBC347B923C1540A00F77CBE /* Endpoint.swift */,
 				FBC347BB23C1579800F77CBE /* Result.swift */,
 				FBB2C80F23C1AD6500A7CA10 /* RoverAPIClient.swift */,
+				FBB2C81123C1AE0B00A7CA10 /* ImageDownloader.swift */,
+				FBB2C81923C1C12600A7CA10 /* PendingOperations.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -199,16 +217,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB2C81823C1B8F200A7CA10 /* RoverImageCell.swift in Sources */,
 				FB50AF9C23BE7D4C00B6C7F9 /* AppDelegate.swift in Sources */,
 				FBC347AD23BEB04200F77CBE /* SinglePageViewController.swift in Sources */,
+				FB2154D923C2857E006A7966 /* PostcardFormatterViewController.swift in Sources */,
+				FBB2C81A23C1C12600A7CA10 /* PendingOperations.swift in Sources */,
 				FBC347AB23BEADFD00F77CBE /* InitialPageViewController.swift in Sources */,
 				FBC347BA23C1540A00F77CBE /* Endpoint.swift in Sources */,
 				FBC347B623C14B8600F77CBE /* APIClient.swift in Sources */,
-				FBC347A723BEA54200F77CBE /* RoverData.swift in Sources */,
+				FBC347A723BEA54200F77CBE /* RoverPhoto.swift in Sources */,
+				FBB2C81223C1AE0B00A7CA10 /* ImageDownloader.swift in Sources */,
 				FBC347BC23C1579800F77CBE /* Result.swift in Sources */,
 				FB50AF9E23BE7D4C00B6C7F9 /* SceneDelegate.swift in Sources */,
 				FBB2C81023C1AD6500A7CA10 /* RoverAPIClient.swift in Sources */,
+				FBB2C81423C1B13900A7CA10 /* NASAData.swift in Sources */,
 				FBC347AF23BEB1E900F77CBE /* PageEnum.swift in Sources */,
+				FBB2C81623C1B83A00A7CA10 /* RoverImageCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

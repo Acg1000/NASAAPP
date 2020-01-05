@@ -21,7 +21,7 @@ class RoverApiClient: APIClient {
     }
     
     // get photos with a certain sol
-    func getRoverPhotos(withSol sol: Int, completion: @escaping (Result<[RoverData], APIError>) -> Void)  {
+    func getRoverPhotos(withSol sol: Int, completion: @escaping (Result<[RoverPhoto], APIError>) -> Void)  {
         let endpoint = NasaEndpoints.getRoverPhotos(forSol: sol, apiKey: APIKey)
         
         let decoder = JSONDecoder()
@@ -30,8 +30,8 @@ class RoverApiClient: APIClient {
         let request = endpoint.request
         print(request)
         
-        fetch(with: request, completion: completion) { data -> [RoverData] in
-            let roverData = try decoder.decode([String: [RoverData]].self, from: data)
+        fetch(with: request, completion: completion) { data -> [RoverPhoto] in
+            let roverData = try decoder.decode([String: [RoverPhoto]].self, from: data)
             guard let results = roverData["photos"] else { return [] }
             
             return results

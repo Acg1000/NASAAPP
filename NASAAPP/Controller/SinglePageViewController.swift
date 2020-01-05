@@ -22,18 +22,18 @@ class SinglePageViewController: UIViewController {
         super.viewDidLoad()
 
         setupView(type: type)
-        roverAPIClient.getRoverPhotos(withSol: 1000) { result in
-            
-            switch result {
-            case .success(let data):
-                for item in data {
-                    print(item.id)
-                    print(item.imgSrc)
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        roverAPIClient.getRoverPhotos(withSol: 1000) { result in
+//
+//            switch result {
+//            case .success(let data):
+//                for item in data {
+//                    print(item.id)
+//                    print(item.imgSrc)
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
     }
     
     func setupView(type: PageEnum) {
@@ -49,9 +49,24 @@ class SinglePageViewController: UIViewController {
             button.setTitle("Scout Earth", for: .normal)
             
         }
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        
+        switch type {
+        case .roverPostcard:
+            let roverImageCollectionViewController = storyboard?.instantiateViewController(withIdentifier: "RoverImageCollectionViewController") as! RoverImageCollectionViewController
+            
+            navigationController?.pushViewController(roverImageCollectionViewController, animated: true)
+            
+//            roverImageCollectionViewController.modalPresentationStyle = .fullScreen
+//            present(roverImageCollectionViewController, animated: true, completion: nil)
+            
+        case .earthImagery:
+            // TO BE IMPLEMENTED...
+            return
+        default:
+            return
+        }
     }
 }
