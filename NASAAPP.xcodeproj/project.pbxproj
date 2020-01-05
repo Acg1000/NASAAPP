@@ -12,11 +12,11 @@
 		FB50AFA323BE7D4C00B6C7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA123BE7D4C00B6C7F9 /* Main.storyboard */; };
 		FB50AFA523BE7D4D00B6C7F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA423BE7D4D00B6C7F9 /* Assets.xcassets */; };
 		FB50AFA823BE7D4D00B6C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA623BE7D4D00B6C7F9 /* LaunchScreen.storyboard */; };
+		FBB2C81023C1AD6500A7CA10 /* RoverAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C80F23C1AD6500A7CA10 /* RoverAPIClient.swift */; };
 		FBC347A723BEA54200F77CBE /* RoverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347A623BEA54200F77CBE /* RoverData.swift */; };
 		FBC347AB23BEADFD00F77CBE /* InitialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347AA23BEADFD00F77CBE /* InitialPageViewController.swift */; };
 		FBC347AD23BEB04200F77CBE /* SinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */; };
 		FBC347AF23BEB1E900F77CBE /* PageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347AE23BEB1E900F77CBE /* PageEnum.swift */; };
-		FBC347B423C14B2D00F77CBE /* RoverApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347B323C14B2D00F77CBE /* RoverApiClient.swift */; };
 		FBC347B623C14B8600F77CBE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347B523C14B8600F77CBE /* APIClient.swift */; };
 		FBC347BA23C1540A00F77CBE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347B923C1540A00F77CBE /* Endpoint.swift */; };
 		FBC347BC23C1579800F77CBE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347BB23C1579800F77CBE /* Result.swift */; };
@@ -30,11 +30,11 @@
 		FB50AFA423BE7D4D00B6C7F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB50AFA723BE7D4D00B6C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB50AFA923BE7D4D00B6C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBB2C80F23C1AD6500A7CA10 /* RoverAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverAPIClient.swift; sourceTree = "<group>"; };
 		FBC347A623BEA54200F77CBE /* RoverData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverData.swift; sourceTree = "<group>"; };
 		FBC347AA23BEADFD00F77CBE /* InitialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPageViewController.swift; sourceTree = "<group>"; };
 		FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePageViewController.swift; sourceTree = "<group>"; };
 		FBC347AE23BEB1E900F77CBE /* PageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageEnum.swift; sourceTree = "<group>"; };
-		FBC347B323C14B2D00F77CBE /* RoverApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverApiClient.swift; sourceTree = "<group>"; };
 		FBC347B523C14B8600F77CBE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FBC347B923C1540A00F77CBE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FBC347BB23C1579800F77CBE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -123,17 +123,9 @@
 				FBC347B523C14B8600F77CBE /* APIClient.swift */,
 				FBC347B923C1540A00F77CBE /* Endpoint.swift */,
 				FBC347BB23C1579800F77CBE /* Result.swift */,
-				FBC347B723C14C5600F77CBE /* RoverPictures */,
+				FBB2C80F23C1AD6500A7CA10 /* RoverAPIClient.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		FBC347B723C14C5600F77CBE /* RoverPictures */ = {
-			isa = PBXGroup;
-			children = (
-				FBC347B323C14B2D00F77CBE /* RoverApiClient.swift */,
-			);
-			path = RoverPictures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +207,7 @@
 				FBC347A723BEA54200F77CBE /* RoverData.swift in Sources */,
 				FBC347BC23C1579800F77CBE /* Result.swift in Sources */,
 				FB50AF9E23BE7D4C00B6C7F9 /* SceneDelegate.swift in Sources */,
-				FBC347B423C14B2D00F77CBE /* RoverApiClient.swift in Sources */,
+				FBB2C81023C1AD6500A7CA10 /* RoverAPIClient.swift in Sources */,
 				FBC347AF23BEB1E900F77CBE /* PageEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
