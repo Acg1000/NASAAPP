@@ -9,12 +9,25 @@
 import Foundation
 import UIKit
 
-struct RoverData {
+class RoverData: Decodable {
     let id: Int
-    let imageURL: URL
+//    let imageURL: String
+    let imgSrc: URL
     let earthDate: String
-    let roverName: String
     
+    init() {
+        self.id = 0
+//        self.imageURL = ""
+        self.imgSrc = URL(string: "")!
+        self.earthDate = ""
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case imgSrc
+//        case imageURL = "img_src"
+        case earthDate
+    }
 }
 
 //extension RoverData {

@@ -9,23 +9,35 @@
 /* Begin PBXBuildFile section */
 		FB50AF9C23BE7D4C00B6C7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */; };
 		FB50AF9E23BE7D4C00B6C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9D23BE7D4C00B6C7F9 /* SceneDelegate.swift */; };
-		FB50AFA023BE7D4C00B6C7F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9F23BE7D4C00B6C7F9 /* ViewController.swift */; };
 		FB50AFA323BE7D4C00B6C7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA123BE7D4C00B6C7F9 /* Main.storyboard */; };
 		FB50AFA523BE7D4D00B6C7F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA423BE7D4D00B6C7F9 /* Assets.xcassets */; };
 		FB50AFA823BE7D4D00B6C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA623BE7D4D00B6C7F9 /* LaunchScreen.storyboard */; };
 		FBC347A723BEA54200F77CBE /* RoverData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347A623BEA54200F77CBE /* RoverData.swift */; };
+		FBC347AB23BEADFD00F77CBE /* InitialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347AA23BEADFD00F77CBE /* InitialPageViewController.swift */; };
+		FBC347AD23BEB04200F77CBE /* SinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */; };
+		FBC347AF23BEB1E900F77CBE /* PageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347AE23BEB1E900F77CBE /* PageEnum.swift */; };
+		FBC347B423C14B2D00F77CBE /* RoverApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347B323C14B2D00F77CBE /* RoverApiClient.swift */; };
+		FBC347B623C14B8600F77CBE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347B523C14B8600F77CBE /* APIClient.swift */; };
+		FBC347BA23C1540A00F77CBE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347B923C1540A00F77CBE /* Endpoint.swift */; };
+		FBC347BC23C1579800F77CBE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347BB23C1579800F77CBE /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FB50AF9823BE7D4C00B6C7F9 /* NASAAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB50AF9D23BE7D4C00B6C7F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB50AF9F23BE7D4C00B6C7F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FB50AFA223BE7D4C00B6C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB50AFA423BE7D4D00B6C7F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB50AFA723BE7D4D00B6C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB50AFA923BE7D4D00B6C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBC347A623BEA54200F77CBE /* RoverData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverData.swift; sourceTree = "<group>"; };
+		FBC347AA23BEADFD00F77CBE /* InitialPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPageViewController.swift; sourceTree = "<group>"; };
+		FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePageViewController.swift; sourceTree = "<group>"; };
+		FBC347AE23BEB1E900F77CBE /* PageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageEnum.swift; sourceTree = "<group>"; };
+		FBC347B323C14B2D00F77CBE /* RoverApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverApiClient.swift; sourceTree = "<group>"; };
+		FBC347B523C14B8600F77CBE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FBC347B923C1540A00F77CBE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FBC347BB23C1579800F77CBE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +70,13 @@
 		FB50AF9A23BE7D4C00B6C7F9 /* NASAAPP */ = {
 			isa = PBXGroup;
 			children = (
+				FBC347B223C14AF700F77CBE /* Networking */,
 				FBC347A423BEA4D300F77CBE /* Controller */,
 				FBC347A323BEA4C900F77CBE /* View */,
 				FBC347A223BEA4BF00F77CBE /* Model */,
 				FBC347A523BEA4E200F77CBE /* Helper */,
 				FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */,
 				FB50AF9D23BE7D4C00B6C7F9 /* SceneDelegate.swift */,
-				FB50AF9F23BE7D4C00B6C7F9 /* ViewController.swift */,
-				FB50AFA123BE7D4C00B6C7F9 /* Main.storyboard */,
 				FB50AFA423BE7D4D00B6C7F9 /* Assets.xcassets */,
 				FB50AFA623BE7D4D00B6C7F9 /* LaunchScreen.storyboard */,
 				FB50AFA923BE7D4D00B6C7F9 /* Info.plist */,
@@ -77,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				FBC347A623BEA54200F77CBE /* RoverData.swift */,
+				FBC347AE23BEB1E900F77CBE /* PageEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -84,6 +96,7 @@
 		FBC347A323BEA4C900F77CBE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FB50AFA123BE7D4C00B6C7F9 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -91,6 +104,8 @@
 		FBC347A423BEA4D300F77CBE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FBC347AA23BEADFD00F77CBE /* InitialPageViewController.swift */,
+				FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -100,6 +115,25 @@
 			children = (
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		FBC347B223C14AF700F77CBE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FBC347B523C14B8600F77CBE /* APIClient.swift */,
+				FBC347B923C1540A00F77CBE /* Endpoint.swift */,
+				FBC347BB23C1579800F77CBE /* Result.swift */,
+				FBC347B723C14C5600F77CBE /* RoverPictures */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FBC347B723C14C5600F77CBE /* RoverPictures */ = {
+			isa = PBXGroup;
+			children = (
+				FBC347B323C14B2D00F77CBE /* RoverApiClient.swift */,
+			);
+			path = RoverPictures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,10 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB50AFA023BE7D4C00B6C7F9 /* ViewController.swift in Sources */,
 				FB50AF9C23BE7D4C00B6C7F9 /* AppDelegate.swift in Sources */,
+				FBC347AD23BEB04200F77CBE /* SinglePageViewController.swift in Sources */,
+				FBC347AB23BEADFD00F77CBE /* InitialPageViewController.swift in Sources */,
+				FBC347BA23C1540A00F77CBE /* Endpoint.swift in Sources */,
+				FBC347B623C14B8600F77CBE /* APIClient.swift in Sources */,
 				FBC347A723BEA54200F77CBE /* RoverData.swift in Sources */,
+				FBC347BC23C1579800F77CBE /* Result.swift in Sources */,
 				FB50AF9E23BE7D4C00B6C7F9 /* SceneDelegate.swift in Sources */,
+				FBC347B423C14B2D00F77CBE /* RoverApiClient.swift in Sources */,
+				FBC347AF23BEB1E900F77CBE /* PageEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
