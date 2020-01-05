@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB2154D923C2857E006A7966 /* PostcardFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2154D823C2857E006A7966 /* PostcardFormatterViewController.swift */; };
+		FB2154DB23C29F9C006A7966 /* PostcardFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2154DA23C29F9C006A7966 /* PostcardFormatterViewController.swift */; };
 		FB50AF9C23BE7D4C00B6C7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */; };
 		FB50AF9E23BE7D4C00B6C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9D23BE7D4C00B6C7F9 /* SceneDelegate.swift */; };
 		FB50AFA323BE7D4C00B6C7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA123BE7D4C00B6C7F9 /* Main.storyboard */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FB2154D823C2857E006A7966 /* PostcardFormatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostcardFormatterViewController.swift; sourceTree = "<group>"; };
+		FB2154DA23C29F9C006A7966 /* PostcardFormatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostcardFormatterViewController.swift; sourceTree = "<group>"; };
 		FB50AF9823BE7D4C00B6C7F9 /* NASAAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB50AF9D23BE7D4C00B6C7F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 				FBC347AA23BEADFD00F77CBE /* InitialPageViewController.swift */,
 				FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */,
 				FBB2C81523C1B83A00A7CA10 /* RoverImageCollectionViewController.swift */,
-				FB2154D823C2857E006A7966 /* PostcardFormatterViewController.swift */,
+				FB2154DA23C29F9C006A7966 /* PostcardFormatterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 				FBB2C81823C1B8F200A7CA10 /* RoverImageCell.swift in Sources */,
 				FB50AF9C23BE7D4C00B6C7F9 /* AppDelegate.swift in Sources */,
 				FBC347AD23BEB04200F77CBE /* SinglePageViewController.swift in Sources */,
-				FB2154D923C2857E006A7966 /* PostcardFormatterViewController.swift in Sources */,
+				FB2154DB23C29F9C006A7966 /* PostcardFormatterViewController.swift in Sources */,
 				FBB2C81A23C1C12600A7CA10 /* PendingOperations.swift in Sources */,
 				FBC347AB23BEADFD00F77CBE /* InitialPageViewController.swift in Sources */,
 				FBC347BA23C1540A00F77CBE /* Endpoint.swift in Sources */,
