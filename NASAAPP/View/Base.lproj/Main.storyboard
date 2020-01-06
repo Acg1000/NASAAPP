@@ -211,7 +211,7 @@
                                         <color key="shadowColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3W-oR-JC2">
-                                        <rect key="frame" x="16" y="16" width="318" height="239"/>
+                                        <rect key="frame" x="16" y="16" width="318" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -225,7 +225,7 @@
                                     <constraint firstItem="dDa-D7-ole" firstAttribute="leading" secondItem="uVQ-gD-Q06" secondAttribute="leading" id="70v-Rp-Ecu"/>
                                     <constraint firstItem="SLk-rr-vM4" firstAttribute="leading" secondItem="L4k-aA-JyZ" secondAttribute="leading" id="BkS-70-WvR"/>
                                     <constraint firstAttribute="bottom" secondItem="dDa-D7-ole" secondAttribute="bottom" id="HSm-bi-sWX"/>
-                                    <constraint firstItem="hGX-jo-Rgm" firstAttribute="top" secondItem="Z3W-oR-JC2" secondAttribute="bottom" constant="16" id="QtP-rF-Y8O"/>
+                                    <constraint firstItem="hGX-jo-Rgm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Z3W-oR-JC2" secondAttribute="bottom" constant="16" id="QtP-rF-Y8O"/>
                                     <constraint firstItem="dDa-D7-ole" firstAttribute="top" secondItem="uVQ-gD-Q06" secondAttribute="top" id="RK0-Hz-d8S"/>
                                     <constraint firstItem="Z3W-oR-JC2" firstAttribute="top" secondItem="uVQ-gD-Q06" secondAttribute="top" constant="16" id="T2H-OO-3lX"/>
                                     <constraint firstItem="SLk-rr-vM4" firstAttribute="top" secondItem="hGX-jo-Rgm" secondAttribute="bottom" constant="4" id="XtM-rI-gy8"/>

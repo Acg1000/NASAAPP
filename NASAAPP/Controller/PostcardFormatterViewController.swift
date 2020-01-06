@@ -27,8 +27,19 @@ class PostcardFormatterViewController: UIViewController {
         roverLabel.text = photo.rover.name
         dateLabel.text = photo.earthDate
         cameraLabel.text = photo.camera.name
+        postcardTextLabel.sizeToFit()
+        
+        // Set delegates for the fields so they dismiss when the return key is pressed
+        textField.delegate = self
+        emailField.delegate = self
+        
+        // Keyboard notification manager
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
+    
+    // MARK: Helper Functions
     
     func createPostcard() {
         let textColor = UIColor.label
@@ -47,27 +58,28 @@ class PostcardFormatterViewController: UIViewController {
         if let photo = photo.image {
             photo.draw(in: CGRect(x: 0, y: 0, width: photo.size.width, height: photo.size.height))
             
-            let rect = CGRect(origin: CGPoint(x: 25, y: photo.size.height-275), size: photo.size)
-//            let text: String = "\(roverLabel)\n\(cameraLabel)\n\(dateLabel)"
-            let text = "epic\ngamer\nmoment"
+            // These rectangles set the bounds for drawing the text over the image
+            let metaDataRect = CGRect(origin: CGPoint(x: 25, y: photo.size.height-275), size: photo.size)
+            let messageRect = CGRect(origin: CGPoint(x: 25, y: 0), size: photo.size)
             
-            text.draw(in: rect, withAttributes: textFontAttributes)
+            // Setting and drawing the text on the image
+            let metaDataText = "\(self.photo.rover.name)\n\(self.photo.camera.name)\n\(self.photo.earthDate)"
+            metaDataText.draw(in: metaDataRect, withAttributes: textFontAttributes)
+
+            if let message = textField.text {
+                message.draw(in: messageRect, withAttributes: textFontAttributes)
+            }
             
-//
-//            let textToDraw: NSString = "\(roverLabel)\n\(cameraLabel)\n\(dateLabel)" as NSString
-//
-//            textToDraw.draw(in: rect, withAttributes: textFontAttributes)
-            
-            
-            
+            // get the new image from the context in which we've been working
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
+            // Hide all the views: TESTING
             imageView.image = newImage
             roverLabel.isHidden = true
             cameraLabel.isHidden = true
             dateLabel.isHidden = true
-            print("image replaced")
+            postcardTextLabel.isHidden = true
             
         } else {
             //TODO: Handle the error properly
@@ -77,6 +89,24 @@ class PostcardFormatterViewController: UIViewController {
         }
     }
     
+    
+    // These two functions allow the keyboard to push the view upwards
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    
+    // MARK: Outlet Functions
     @IBAction func textFieldContentChanged(_ sender: Any) {
         postcardTextLabel.text = textField.text
     }
@@ -98,5 +128,18 @@ extension PostcardFormatterViewController: MFMailComposeViewControllerDelegate {
             
 //            let imageData:
         }
+    }
+}
+
+
+
+// MARK: Extensions
+
+// Make keyboard dismiss when done is pressed on the keyboard
+extension PostcardFormatterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        textField.resignFirstResponder()
+        return true
     }
 }
