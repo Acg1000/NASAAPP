@@ -8,9 +8,8 @@
 
 import Foundation
 
-class RoverApiClient: APIClient {
+class NASAAPIClient: APIClient {
     var session: URLSession
-    private let APIKey = "5IQD9ugr2GM5cQgcUwDEdT2F13SBlCnYVmDCIfM3"
     
     init(configuration: URLSessionConfiguration) {
         self.session = URLSession(configuration: configuration)
@@ -22,10 +21,11 @@ class RoverApiClient: APIClient {
     
     // get photos with a certain sol
     func getRoverPhotos(withSol sol: Int, completion: @escaping (Result<[RoverPhoto], APIError>) -> Void)  {
-        let endpoint = NasaEndpoints.getRoverPhotos(forSol: sol, apiKey: APIKey)
+        let endpoint = NasaEndpoints.getRoverPhotos(forSol: sol)
         
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        // TODO Format the date
 
         let request = endpoint.request
         print(request)
@@ -35,6 +35,25 @@ class RoverApiClient: APIClient {
             guard let results = roverData["photos"] else { return [] }
             
             return results
+        }
+    }
+    
+    func getEarthImage(atLatitude latitude: Double, andLongitude longitude: Double, completion: @escaping (Result<EarthImage, APIError>) -> Void) {
+        let endpoint = NasaEndpoints.getEarthImage(atLatitude: latitude, andLongitude: longitude)
+        
+        let decoder = JSONDecoder()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        
+        let request = endpoint.request
+        print(request)
+        
+        fetch(with: request, completion: completion) { data -> EarthImage in
+            let earthImageData = try decoder.decode(EarthImage.self, from: data)
+            
+            return earthImageData
         }
     }
 }

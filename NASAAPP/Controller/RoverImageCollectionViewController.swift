@@ -22,7 +22,7 @@ class RoverImageCollectionViewController: UICollectionViewController {
         }
     }
 
-    let roverAPIClient = RoverApiClient()
+    let roverAPIClient = NASAAPIClient()
     let pendingOperations = PendingOperations()
 
     override func viewDidLoad() {

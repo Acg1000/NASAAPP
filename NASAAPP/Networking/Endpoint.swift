@@ -35,9 +35,10 @@ extension Endpoint {
 
 
 enum NasaEndpoints {
-    
+        
     // Creates the endpoints useable for calling the API
-    case getRoverPhotos(forSol: Int, apiKey: String)
+    case getRoverPhotos(forSol: Int)
+    case getEarthImage(atLatitude: Double, andLongitude: Double)
 }
 
 
@@ -49,16 +50,24 @@ extension NasaEndpoints: Endpoint {
     var path: String {
         switch self {
         case .getRoverPhotos: return "/mars-photos/api/v1/rovers/curiosity/photos"
+        case .getEarthImage: return "/planetary/earth/imagery/"
         }
     }
     
     var queryItems: [URLQueryItem] {
         switch self {
-        case .getRoverPhotos(let sol, let apiKey):
+        case .getRoverPhotos(let sol):
             return [
                 URLQueryItem(name: "sol", value: String(sol)),
 //                URLQueryItem(name: "camera", value: "FHAZ,RHAZ"),
-                URLQueryItem(name: "api_key", value: apiKey)]
+                URLQueryItem(name: "api_key", value: "5IQD9ugr2GM5cQgcUwDEdT2F13SBlCnYVmDCIfM3")]
+            
+        case .getEarthImage(let lat, let lon):
+            return [
+                URLQueryItem(name: "lon", value: String(lon)),
+                URLQueryItem(name: "lat", value: String(lat)),
+                URLQueryItem(name: "cloud_score", value: "True"),
+                URLQueryItem(name: "api_key", value: "5IQD9ugr2GM5cQgcUwDEdT2F13SBlCnYVmDCIfM3")]
         }
     }
 }

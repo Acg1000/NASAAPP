@@ -16,7 +16,7 @@ class SinglePageViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     
     var type: PageEnum!
-    let roverAPIClient = RoverApiClient()
+    let roverAPIClient = NASAAPIClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()

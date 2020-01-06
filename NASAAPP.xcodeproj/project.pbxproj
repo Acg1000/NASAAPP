@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0A5AAB23C3CC3200980A23 /* NASAAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A5AAA23C3CC3200980A23 /* NASAAPPTests.swift */; };
+		FB0A5AB323C3DC1F00980A23 /* NASAAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A5AB223C3DC1F00980A23 /* NASAAPIClient.swift */; };
+		FB0A5AB523C3DCA500980A23 /* EarthImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A5AB423C3DCA500980A23 /* EarthImage.swift */; };
 		FB2154DB23C29F9C006A7966 /* PostcardFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2154DA23C29F9C006A7966 /* PostcardFormatterViewController.swift */; };
 		FB50AF9C23BE7D4C00B6C7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */; };
 		FB50AF9E23BE7D4C00B6C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9D23BE7D4C00B6C7F9 /* SceneDelegate.swift */; };
 		FB50AFA323BE7D4C00B6C7F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA123BE7D4C00B6C7F9 /* Main.storyboard */; };
 		FB50AFA523BE7D4D00B6C7F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA423BE7D4D00B6C7F9 /* Assets.xcassets */; };
 		FB50AFA823BE7D4D00B6C7F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB50AFA623BE7D4D00B6C7F9 /* LaunchScreen.storyboard */; };
-		FBB2C81023C1AD6500A7CA10 /* RoverAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C80F23C1AD6500A7CA10 /* RoverAPIClient.swift */; };
 		FBB2C81223C1AE0B00A7CA10 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C81123C1AE0B00A7CA10 /* ImageDownloader.swift */; };
 		FBB2C81423C1B13900A7CA10 /* NASAData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C81323C1B13900A7CA10 /* NASAData.swift */; };
 		FBB2C81623C1B83A00A7CA10 /* RoverImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2C81523C1B83A00A7CA10 /* RoverImageCollectionViewController.swift */; };
@@ -28,7 +30,22 @@
 		FBC347BC23C1579800F77CBE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC347BB23C1579800F77CBE /* Result.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FB0A5AAD23C3CC3200980A23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB50AF9023BE7D4C00B6C7F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB50AF9723BE7D4C00B6C7F9;
+			remoteInfo = NASAAPP;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		FB0A5AA823C3CC3200980A23 /* NASAAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAAPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0A5AAA23C3CC3200980A23 /* NASAAPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPPTests.swift; sourceTree = "<group>"; };
+		FB0A5AAC23C3CC3200980A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB0A5AB223C3DC1F00980A23 /* NASAAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPIClient.swift; sourceTree = "<group>"; };
+		FB0A5AB423C3DCA500980A23 /* EarthImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImage.swift; sourceTree = "<group>"; };
 		FB2154DA23C29F9C006A7966 /* PostcardFormatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostcardFormatterViewController.swift; sourceTree = "<group>"; };
 		FB50AF9823BE7D4C00B6C7F9 /* NASAAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +54,6 @@
 		FB50AFA423BE7D4D00B6C7F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB50AFA723BE7D4D00B6C7F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB50AFA923BE7D4D00B6C7F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBB2C80F23C1AD6500A7CA10 /* RoverAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverAPIClient.swift; sourceTree = "<group>"; };
 		FBB2C81123C1AE0B00A7CA10 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		FBB2C81323C1B13900A7CA10 /* NASAData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAData.swift; sourceTree = "<group>"; };
 		FBB2C81523C1B83A00A7CA10 /* RoverImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverImageCollectionViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +69,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FB0A5AA523C3CC3200980A23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB50AF9523BE7D4C00B6C7F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,10 +86,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB0A5AA923C3CC3200980A23 /* NASAAPPTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB0A5AAA23C3CC3200980A23 /* NASAAPPTests.swift */,
+				FB0A5AAC23C3CC3200980A23 /* Info.plist */,
+			);
+			path = NASAAPPTests;
+			sourceTree = "<group>";
+		};
 		FB50AF8F23BE7D4C00B6C7F9 = {
 			isa = PBXGroup;
 			children = (
 				FB50AF9A23BE7D4C00B6C7F9 /* NASAAPP */,
+				FB0A5AA923C3CC3200980A23 /* NASAAPPTests */,
 				FB50AF9923BE7D4C00B6C7F9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				FB50AF9823BE7D4C00B6C7F9 /* NASAAPP.app */,
+				FB0A5AA823C3CC3200980A23 /* NASAAPPTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +133,7 @@
 		FBC347A223BEA4BF00F77CBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB0A5AB423C3DCA500980A23 /* EarthImage.swift */,
 				FBC347A623BEA54200F77CBE /* RoverPhoto.swift */,
 				FBC347AE23BEB1E900F77CBE /* PageEnum.swift */,
 				FBB2C81323C1B13900A7CA10 /* NASAData.swift */,
@@ -139,7 +174,7 @@
 				FBC347B523C14B8600F77CBE /* APIClient.swift */,
 				FBC347B923C1540A00F77CBE /* Endpoint.swift */,
 				FBC347BB23C1579800F77CBE /* Result.swift */,
-				FBB2C80F23C1AD6500A7CA10 /* RoverAPIClient.swift */,
+				FB0A5AB223C3DC1F00980A23 /* NASAAPIClient.swift */,
 				FBB2C81123C1AE0B00A7CA10 /* ImageDownloader.swift */,
 				FBB2C81923C1C12600A7CA10 /* PendingOperations.swift */,
 			);
@@ -149,6 +184,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FB0A5AA723C3CC3200980A23 /* NASAAPPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB0A5AB123C3CC3200980A23 /* Build configuration list for PBXNativeTarget "NASAAPPTests" */;
+			buildPhases = (
+				FB0A5AA423C3CC3200980A23 /* Sources */,
+				FB0A5AA523C3CC3200980A23 /* Frameworks */,
+				FB0A5AA623C3CC3200980A23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB0A5AAE23C3CC3200980A23 /* PBXTargetDependency */,
+			);
+			name = NASAAPPTests;
+			productName = NASAAPPTests;
+			productReference = FB0A5AA823C3CC3200980A23 /* NASAAPPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FB50AF9723BE7D4C00B6C7F9 /* NASAAPP */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB50AFAC23BE7D4D00B6C7F9 /* Build configuration list for PBXNativeTarget "NASAAPP" */;
@@ -176,6 +229,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Andrew Graves";
 				TargetAttributes = {
+					FB0A5AA723C3CC3200980A23 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = FB50AF9723BE7D4C00B6C7F9;
+					};
 					FB50AF9723BE7D4C00B6C7F9 = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -195,11 +252,19 @@
 			projectRoot = "";
 			targets = (
 				FB50AF9723BE7D4C00B6C7F9 /* NASAAPP */,
+				FB0A5AA723C3CC3200980A23 /* NASAAPPTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FB0A5AA623C3CC3200980A23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB50AF9623BE7D4C00B6C7F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,23 +278,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FB0A5AA423C3CC3200980A23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0A5AAB23C3CC3200980A23 /* NASAAPPTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB50AF9423BE7D4C00B6C7F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0A5AB323C3DC1F00980A23 /* NASAAPIClient.swift in Sources */,
 				FBB2C81823C1B8F200A7CA10 /* RoverImageCell.swift in Sources */,
 				FB50AF9C23BE7D4C00B6C7F9 /* AppDelegate.swift in Sources */,
 				FBC347AD23BEB04200F77CBE /* SinglePageViewController.swift in Sources */,
 				FB2154DB23C29F9C006A7966 /* PostcardFormatterViewController.swift in Sources */,
 				FBB2C81A23C1C12600A7CA10 /* PendingOperations.swift in Sources */,
 				FBC347AB23BEADFD00F77CBE /* InitialPageViewController.swift in Sources */,
+				FB0A5AB523C3DCA500980A23 /* EarthImage.swift in Sources */,
 				FBC347BA23C1540A00F77CBE /* Endpoint.swift in Sources */,
 				FBC347B623C14B8600F77CBE /* APIClient.swift in Sources */,
 				FBC347A723BEA54200F77CBE /* RoverPhoto.swift in Sources */,
 				FBB2C81223C1AE0B00A7CA10 /* ImageDownloader.swift in Sources */,
 				FBC347BC23C1579800F77CBE /* Result.swift in Sources */,
 				FB50AF9E23BE7D4C00B6C7F9 /* SceneDelegate.swift in Sources */,
-				FBB2C81023C1AD6500A7CA10 /* RoverAPIClient.swift in Sources */,
 				FBB2C81423C1B13900A7CA10 /* NASAData.swift in Sources */,
 				FBC347AF23BEB1E900F77CBE /* PageEnum.swift in Sources */,
 				FBB2C81623C1B83A00A7CA10 /* RoverImageCollectionViewController.swift in Sources */,
@@ -237,6 +311,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB0A5AAE23C3CC3200980A23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB50AF9723BE7D4C00B6C7F9 /* NASAAPP */;
+			targetProxy = FB0A5AAD23C3CC3200980A23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FB50AFA123BE7D4C00B6C7F9 /* Main.storyboard */ = {
@@ -258,6 +340,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FB0A5AAF23C3CC3200980A23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CJ2GPQHZ8;
+				INFOPLIST_FILE = NASAAPPTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewcgraves.NASAAPPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NASAAPP.app/NASAAPP";
+			};
+			name = Debug;
+		};
+		FB0A5AB023C3CC3200980A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CJ2GPQHZ8;
+				INFOPLIST_FILE = NASAAPPTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewcgraves.NASAAPPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NASAAPP.app/NASAAPP";
+			};
+			name = Release;
+		};
 		FB50AFAA23BE7D4D00B6C7F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,6 +533,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FB0A5AB123C3CC3200980A23 /* Build configuration list for PBXNativeTarget "NASAAPPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB0A5AAF23C3CC3200980A23 /* Debug */,
+				FB0A5AB023C3CC3200980A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FB50AF9323BE7D4C00B6C7F9 /* Build configuration list for PBXProject "NASAAPP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
