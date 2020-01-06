@@ -210,7 +210,7 @@
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3W-oR-JC2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3W-oR-JC2">
                                         <rect key="frame" x="16" y="16" width="318" height="239"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -241,14 +241,45 @@
                                 <rect key="frame" x="32" y="458" width="350" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldContentChanged:" destination="qpL-LF-6hX" eventType="editingChanged" id="0gz-8V-uR9"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LoW-bv-TTE">
+                                <rect key="frame" x="32" y="574" width="350" height="53"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="q4e-ZU-d0r" eventType="touchUpInside" id="H7T-qt-SV8"/>
+                                    <action selector="sendButtonPressed:" destination="qpL-LF-6hX" eventType="touchUpInside" id="zHm-wk-dot"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email to send to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ca-P2-uuD">
+                                <rect key="frame" x="32" y="508" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="2ca-P2-uuD" firstAttribute="top" secondItem="y1U-gT-vdW" secondAttribute="bottom" constant="16" id="1mW-Uc-5A7"/>
+                            <constraint firstItem="2ca-P2-uuD" firstAttribute="trailing" secondItem="y1U-gT-vdW" secondAttribute="trailing" id="9eV-cb-ZNZ"/>
+                            <constraint firstItem="LoW-bv-TTE" firstAttribute="width" secondItem="LoW-bv-TTE" secondAttribute="height" multiplier="53:8" id="NBg-Y3-tn8"/>
                             <constraint firstItem="y1U-gT-vdW" firstAttribute="trailing" secondItem="uVQ-gD-Q06" secondAttribute="trailing" id="NYx-wI-g4R"/>
+                            <constraint firstItem="LoW-bv-TTE" firstAttribute="top" secondItem="2ca-P2-uuD" secondAttribute="bottom" constant="32" id="TEx-gr-Qif"/>
                             <constraint firstItem="y1U-gT-vdW" firstAttribute="top" secondItem="uVQ-gD-Q06" secondAttribute="bottom" constant="32" id="YIj-Nt-tMD"/>
                             <constraint firstItem="uVQ-gD-Q06" firstAttribute="top" secondItem="LI4-sW-slC" secondAttribute="top" constant="32" id="ZhW-ep-Hxf"/>
+                            <constraint firstItem="2ca-P2-uuD" firstAttribute="leading" secondItem="y1U-gT-vdW" secondAttribute="leading" id="eGE-it-vtk"/>
+                            <constraint firstItem="LoW-bv-TTE" firstAttribute="leading" secondItem="2ca-P2-uuD" secondAttribute="leading" id="gVH-eu-BzD"/>
                             <constraint firstItem="y1U-gT-vdW" firstAttribute="leading" secondItem="uVQ-gD-Q06" secondAttribute="leading" id="q4g-RP-qwd"/>
+                            <constraint firstItem="LoW-bv-TTE" firstAttribute="trailing" secondItem="2ca-P2-uuD" secondAttribute="trailing" id="tJZ-Sm-1gu"/>
                             <constraint firstItem="uVQ-gD-Q06" firstAttribute="leading" secondItem="LI4-sW-slC" secondAttribute="leading" constant="32" id="una-x1-xrR"/>
                             <constraint firstItem="LI4-sW-slC" firstAttribute="trailing" secondItem="uVQ-gD-Q06" secondAttribute="trailing" constant="32" id="zD4-VJ-Eat"/>
                         </constraints>
@@ -257,9 +288,11 @@
                     <connections>
                         <outlet property="cameraLabel" destination="SLk-rr-vM4" id="Ylk-hL-LCz"/>
                         <outlet property="dateLabel" destination="L4k-aA-JyZ" id="Rhq-pg-oxU"/>
+                        <outlet property="emailField" destination="2ca-P2-uuD" id="YAR-KW-lZw"/>
                         <outlet property="imageView" destination="dDa-D7-ole" id="II0-FL-e7w"/>
                         <outlet property="postcardTextLabel" destination="Z3W-oR-JC2" id="bRa-bS-lT9"/>
                         <outlet property="roverLabel" destination="hGX-jo-Rgm" id="c4b-Mx-ou0"/>
+                        <outlet property="sendButton" destination="LoW-bv-TTE" id="3An-lr-wyv"/>
                         <outlet property="textField" destination="y1U-gT-vdW" id="LLx-Gx-5xd"/>
                     </connections>
                 </viewController>
