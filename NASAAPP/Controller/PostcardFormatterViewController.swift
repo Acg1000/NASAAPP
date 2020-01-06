@@ -41,6 +41,7 @@ class PostcardFormatterViewController: UIViewController {
     
     // MARK: Helper Functions
     
+    // Draws from the textfield the information from the photo to create a postcard attachment ready to send through mail
     func createPostcard() -> UIImage? {
         let textColor = UIColor.label
         let textFont = UIFont.systemFont(ofSize: 70)
@@ -73,24 +74,19 @@ class PostcardFormatterViewController: UIViewController {
             // get the new image from the context in which we've been working
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
-            
-//            // Hide all the views: TESTING
-//            imageView.image = newImage
-//            roverLabel.isHidden = true
-//            cameraLabel.isHidden = true
-//            dateLabel.isHidden = true
-//            postcardTextLabel.isHidden = true
-            
             return newImage
             
         } else {
-            //TODO: Handle the error properly
             UIGraphicsEndImageContext()
-            print("image not present")
-            
             return nil
-
         }
+    }
+    
+    func alert(withTitle title: String, andMessage message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     
@@ -116,9 +112,8 @@ class PostcardFormatterViewController: UIViewController {
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
-        
         guard let postcard = createPostcard(), let email = emailField.text else {
-            //TODO: Handle errors
+            alert(withTitle: "Invalid Selection / Email", andMessage: "Please make sure you have an email entered and a picture selected")
             return
         }
         
@@ -143,8 +138,8 @@ extension PostcardFormatterViewController: MFMailComposeViewControllerDelegate {
             self.present(mail, animated: true, completion: nil)
         } else {
             
-            print("Cannot send mail!")
-            //TODO: HANDLE ERROR
+            alert(withTitle: "Mail Not Setup", andMessage: "Your phone is not currently setup to send mail. Add a mailing client through your mail app to send mail in this app")
+
         }
     }
     
