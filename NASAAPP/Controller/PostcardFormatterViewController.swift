@@ -41,7 +41,7 @@ class PostcardFormatterViewController: UIViewController {
     
     // MARK: Helper Functions
     
-    func createPostcard() {
+    func createPostcard() -> UIImage? {
         let textColor = UIColor.label
         let textFont = UIFont.systemFont(ofSize: 70)
         let shadowColor = UIColor.systemBackground
@@ -74,17 +74,21 @@ class PostcardFormatterViewController: UIViewController {
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
-            // Hide all the views: TESTING
-            imageView.image = newImage
-            roverLabel.isHidden = true
-            cameraLabel.isHidden = true
-            dateLabel.isHidden = true
-            postcardTextLabel.isHidden = true
+//            // Hide all the views: TESTING
+//            imageView.image = newImage
+//            roverLabel.isHidden = true
+//            cameraLabel.isHidden = true
+//            dateLabel.isHidden = true
+//            postcardTextLabel.isHidden = true
+            
+            return newImage
             
         } else {
             //TODO: Handle the error properly
             UIGraphicsEndImageContext()
             print("image not present")
+            
+            return nil
 
         }
     }
@@ -112,22 +116,42 @@ class PostcardFormatterViewController: UIViewController {
     }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
-        createPostcard()
+        
+        guard let postcard = createPostcard(), let email = emailField.text else {
+            //TODO: Handle errors
+            return
+        }
+        
+        sendMail(image: postcard, withRecipient: email)
     }
 }
 
 extension PostcardFormatterViewController: MFMailComposeViewControllerDelegate {
     
-    func sendMail(imageView: UIImageView) {
+    func sendMail(image: UIImage, withRecipient recipient: String) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["andrewcgraves@gmail.com"])
+            mail.setToRecipients([recipient])
             mail.setSubject("Postcard From NASA App")
             mail.setMessageBody("A postcard has been sent to you from NASAAPP! It is attached to this email as a photo", isHTML: false)
             
-//            let imageData:
+            if let imageData = image.jpegData(compressionQuality: 1) {
+                mail.addAttachmentData(imageData, mimeType: "image/jpeg", fileName: "rover-postcard")
+            }
+            
+            self.present(mail, animated: true, completion: nil)
+        } else {
+            
+            print("Cannot send mail!")
+            //TODO: HANDLE ERROR
         }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        print("Result code from email: \(result)")
+        controller.dismiss(animated: true, completion: nil)
     }
 }
 
