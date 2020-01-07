@@ -10,6 +10,8 @@
 		FB0A5AAB23C3CC3200980A23 /* NASAAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A5AAA23C3CC3200980A23 /* NASAAPPTests.swift */; };
 		FB0A5AB323C3DC1F00980A23 /* NASAAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A5AB223C3DC1F00980A23 /* NASAAPIClient.swift */; };
 		FB0A5AB523C3DCA500980A23 /* EarthImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A5AB423C3DCA500980A23 /* EarthImage.swift */; };
+		FB0A5AB723C4167C00980A23 /* EarthImageryViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A5AB623C4167C00980A23 /* EarthImageryViewerController.swift */; };
+		FB0A5AB923C41C3700980A23 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0A5AB823C41C3700980A23 /* LocationManager.swift */; };
 		FB2154DB23C29F9C006A7966 /* PostcardFormatterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2154DA23C29F9C006A7966 /* PostcardFormatterViewController.swift */; };
 		FB50AF9C23BE7D4C00B6C7F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */; };
 		FB50AF9E23BE7D4C00B6C7F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB50AF9D23BE7D4C00B6C7F9 /* SceneDelegate.swift */; };
@@ -46,6 +48,8 @@
 		FB0A5AAC23C3CC3200980A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB0A5AB223C3DC1F00980A23 /* NASAAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAAPIClient.swift; sourceTree = "<group>"; };
 		FB0A5AB423C3DCA500980A23 /* EarthImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImage.swift; sourceTree = "<group>"; };
+		FB0A5AB623C4167C00980A23 /* EarthImageryViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImageryViewerController.swift; sourceTree = "<group>"; };
+		FB0A5AB823C41C3700980A23 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FB2154DA23C29F9C006A7966 /* PostcardFormatterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostcardFormatterViewController.swift; sourceTree = "<group>"; };
 		FB50AF9823BE7D4C00B6C7F9 /* NASAAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB50AF9B23BE7D4C00B6C7F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				FBC347AC23BEB04200F77CBE /* SinglePageViewController.swift */,
 				FBB2C81523C1B83A00A7CA10 /* RoverImageCollectionViewController.swift */,
 				FB2154DA23C29F9C006A7966 /* PostcardFormatterViewController.swift */,
+				FB0A5AB623C4167C00980A23 /* EarthImageryViewerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 		FBC347A523BEA4E200F77CBE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				FB0A5AB823C41C3700980A23 /* LocationManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -307,6 +313,8 @@
 				FBB2C81423C1B13900A7CA10 /* NASAData.swift in Sources */,
 				FBC347AF23BEB1E900F77CBE /* PageEnum.swift in Sources */,
 				FBB2C81623C1B83A00A7CA10 /* RoverImageCollectionViewController.swift in Sources */,
+				FB0A5AB923C41C3700980A23 /* LocationManager.swift in Sources */,
+				FB0A5AB723C4167C00980A23 /* EarthImageryViewerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,7 @@ class PostcardFormatterViewController: UIViewController {
     var photo: RoverPhoto!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         imageView.image = photo.image
         roverLabel.text = photo.rover.name
         dateLabel.text = photo.earthDate

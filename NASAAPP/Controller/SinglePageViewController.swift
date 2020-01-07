@@ -59,12 +59,11 @@ class SinglePageViewController: UIViewController {
             
             navigationController?.pushViewController(roverImageCollectionViewController, animated: true)
             
-//            roverImageCollectionViewController.modalPresentationStyle = .fullScreen
-//            present(roverImageCollectionViewController, animated: true, completion: nil)
-            
         case .earthImagery:
-            // TO BE IMPLEMENTED...
-            return
+            let earthImageryViewController = storyboard?.instantiateViewController(withIdentifier: "EarthImageryViewerController") as! EarthImageryViewController
+            
+            navigationController?.pushViewController(earthImageryViewController, animated: true)
+            
         default:
             return
         }
