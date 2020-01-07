@@ -8,16 +8,15 @@
 
 import UIKit
 
-//private let reuseIdentifier = "roverImageCell"
+private let reuseIdentifier = "roverImageCell"
 
 class RoverImageCollectionViewController: UICollectionViewController {
     
     var roverPhotos: [RoverPhoto] = [] {
         didSet {
-            print("Updating photos")
-            
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                
             }
         }
     }
@@ -29,31 +28,43 @@ class RoverImageCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
 
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
         collectionView.delegate = self
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         loadRoverData()
-        
-        
         
     }
     
+    // MARK: Helper Methods
+    
+    // Loads the rover data from the API
     func loadRoverData() {
         roverAPIClient.getRoverPhotos(withSol: 1000) { result in
-            
             switch result {
             case .success(let data):
                 self.roverPhotos = data
-                print("data revieved :)")
+                
             case .failure(let error):
-                // TODO: Fail more gracefully
-                fatalError("\(error)")
+                switch error {
+                case .invalidData:
+                    self.alert(withTitle: "Invalid Data", andMessage: "There was a problem with data processing. Make sure you have a stable internet connection")
+                    
+                case .jsonConversionFailure, .jsonParsingFailure:
+                    // I want the app to crash if there was a conversion failure
+                    fatalError("Json conversion error: \(error)")
+                    
+                case .requestFailed, .responseUnsuccessful:
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+
+                        self.alert(withTitle: "Request/Response Failed", andMessage: "Please check your internet connection... There was s problem retreving information from the internet...")
+                    }
+                }
             }
         }
     }
     
+    // Takes the URL from the rover data and downloades an image
     func downloadRoverImages(forPhoto photo: RoverPhoto, atIndexPath indexPath: IndexPath) {
         if let _ = pendingOperations.downloadsInProgress[indexPath] {
             return
@@ -77,7 +88,13 @@ class RoverImageCollectionViewController: UICollectionViewController {
         pendingOperations.downloadQueue.addOperation(downloader)
     }
     
-    
+    // Creates and presents an alert
+    func alert(withTitle title: String, andMessage message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     
     // MARK: UICollectionViewDataSource
@@ -92,7 +109,7 @@ class RoverImageCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "roverImageCell", for: indexPath) as! RoverImageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RoverImageCell
         let currentPhoto = roverPhotos[indexPath.row]
         
         cell.configureCell(withPhoto: currentPhoto)
@@ -111,35 +128,4 @@ class RoverImageCollectionViewController: UICollectionViewController {
         postcardFormatterViewController.photo = roverPhotos[indexPath.row]
         navigationController?.pushViewController(postcardFormatterViewController, animated: true)
     }
-    
-//    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-//        print("item tapped")
-//
-//    }
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
- */
 }

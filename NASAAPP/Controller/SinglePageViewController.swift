@@ -5,6 +5,7 @@
 //  Created by Andrew Graves on 1/2/20.
 //  Copyright © 2020 Andrew Graves. All rights reserved.
 //
+//  PURPOSE: Serves as the class representing a page on the page view controller
 
 import UIKit
 
@@ -22,36 +23,29 @@ class SinglePageViewController: UIViewController {
         super.viewDidLoad()
 
         setupView(type: type)
-//        roverAPIClient.getRoverPhotos(withSol: 1000) { result in
-//
-//            switch result {
-//            case .success(let data):
-//                for item in data {
-//                    print(item.id)
-//                    print(item.imgSrc)
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+
     }
     
+    // Function that setsup the view depending on the type of page that it is
     func setupView(type: PageEnum) {
         switch type {
         case .roverPostcard:
             titleLabel.text = "Rover Postcard"
             descriptionLabel.text = "Chose from a plethora of photos taken from various rovers on the surface of mars to make and email yourself a postcard with that image"
             button.setTitle("Create Rover Postcard", for: .normal)
+            imageView.image = #imageLiteral(resourceName: "RoverImage")
             
         case .earthImagery:
             titleLabel.text = "Earth Imagery"
             descriptionLabel.text = "Scout areas on earth from a map and see am image from that location"
             button.setTitle("Scout Earth", for: .normal)
+            imageView.image = #imageLiteral(resourceName: "EarthImage")
             
         }
         navigationController?.navigationBar.isHidden = true
     }
     
+    // Happens when the button at the bottom of the screen is pressed
     @IBAction func buttonPressed(_ sender: Any) {
         switch type {
         case .roverPostcard:

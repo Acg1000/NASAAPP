@@ -46,16 +46,14 @@ class PostcardFormatterViewController: UIViewController {
     func createPostcard() -> UIImage? {
         let textColor = UIColor.label
         let textFont = UIFont.systemFont(ofSize: 70)
-        let shadowColor = UIColor.systemBackground
         
         let scale = UIScreen.main.scale
         UIGraphicsBeginImageContextWithOptions(imageView.image?.size ?? CGSize(width: 150, height: 150), false, scale)
         
         let textFontAttributes = [
             NSAttributedString.Key.font: textFont,
-            NSAttributedString.Key.foregroundColor: textColor,
-//            NSAttributedString.Key.shadow: shadowColor,
-        ] as [NSAttributedString.Key: Any]
+            NSAttributedString.Key.foregroundColor: textColor
+            ] as [NSAttributedString.Key: Any]
         
         if let photo = photo.image {
             photo.draw(in: CGRect(x: 0, y: 0, width: photo.size.width, height: photo.size.height))
@@ -122,6 +120,10 @@ class PostcardFormatterViewController: UIViewController {
     }
 }
 
+
+// MARK: Extensions
+
+// Adds implementation for mailing the artwork
 extension PostcardFormatterViewController: MFMailComposeViewControllerDelegate {
     
     func sendMail(image: UIImage, withRecipient recipient: String) {
@@ -140,20 +142,14 @@ extension PostcardFormatterViewController: MFMailComposeViewControllerDelegate {
         } else {
             
             alert(withTitle: "Mail Not Setup", andMessage: "Your phone is not currently setup to send mail. Add a mailing client through your mail app to send mail in this app")
-
         }
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        
         print("Result code from email: \(result)")
         controller.dismiss(animated: true, completion: nil)
     }
 }
-
-
-
-// MARK: Extensions
 
 // Make keyboard dismiss when done is pressed on the keyboard
 extension PostcardFormatterViewController: UITextFieldDelegate {
