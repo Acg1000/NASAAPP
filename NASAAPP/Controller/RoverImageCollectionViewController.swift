@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "roverImageCell"
 
-class RoverImageCollectionViewController: UICollectionViewController {
+class RoverImageCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var roverPhotos: [RoverPhoto] = [] {
         didSet {
@@ -65,28 +65,28 @@ class RoverImageCollectionViewController: UICollectionViewController {
     }
     
     // Takes the URL from the rover data and downloades an image
-    func downloadRoverImages(forPhoto photo: RoverPhoto, atIndexPath indexPath: IndexPath) {
-        if let _ = pendingOperations.downloadsInProgress[indexPath] {
-            return
-        }
-        
-        let downloader = ImageDownloader(nasaData: photo)
-        
-        downloader.completionBlock = {
-            if downloader.isCancelled {
-                return
-            }
-            
-            DispatchQueue.main.async {
-                print("Artwork Download Finished!")
-                self.pendingOperations.downloadsInProgress.removeValue(forKey: indexPath)
-                self.collectionView.reloadItems(at: [indexPath])
-            }
-        }
-        
-        pendingOperations.downloadsInProgress[indexPath] = downloader
-        pendingOperations.downloadQueue.addOperation(downloader)
-    }
+//    func downloadRoverImages(forPhoto photo: RoverPhoto, atIndexPath indexPath: IndexPath) {
+//        if let _ = pendingOperations.downloadsInProgress[indexPath] {
+//            return
+//        }
+//
+//        let downloader = ImageDownloader(nasaData: photo)
+//
+//        downloader.completionBlock = {
+//            if downloader.isCancelled {
+//                return
+//            }
+//
+//            DispatchQueue.main.async {
+//                print("Artwork Download Finished!")
+//                self.pendingOperations.downloadsInProgress.removeValue(forKey: indexPath)
+//                self.collectionView.reloadItems(at: [indexPath])
+//            }
+//        }
+//
+//        pendingOperations.downloadsInProgress[indexPath] = downloader
+//        pendingOperations.downloadQueue.addOperation(downloader)
+//    }
     
     // Creates and presents an alert
     func alert(withTitle title: String, andMessage message: String) {
@@ -114,9 +114,9 @@ class RoverImageCollectionViewController: UICollectionViewController {
         
         cell.configureCell(withPhoto: currentPhoto)
         
-        if currentPhoto.imageState == .placeholder {
-            downloadRoverImages(forPhoto: currentPhoto, atIndexPath: indexPath)
-        }
+//        if currentPhoto.imageState == .placeholder {
+//            downloadRoverImages(forPhoto: currentPhoto, atIndexPath: indexPath)
+//        }
     
         return cell
     }
@@ -127,5 +127,12 @@ class RoverImageCollectionViewController: UICollectionViewController {
         let postcardFormatterViewController = storyboard?.instantiateViewController(identifier: "PostcardFormatterViewController") as! PostcardFormatterViewController
         postcardFormatterViewController.photo = roverPhotos[indexPath.row]
         navigationController?.pushViewController(postcardFormatterViewController, animated: true)
+    }
+    
+    
+    // MARK: FLOW LAYOUT
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: 150, height: 150)
     }
 }

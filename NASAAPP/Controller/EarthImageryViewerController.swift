@@ -81,14 +81,11 @@ class EarthImageryViewController: UIViewController {
         apiClient.getEarthImage(atLatitude: location.coordinate.latitude, andLongitude: location.coordinate.longitude) { result in
             switch result {
             case .success(let image):
-                print("success")
-                let imageData = try! Data(contentsOf: image.imgSrc)
+                let imageData = (try? Data(contentsOf: image.imgSrc)) ?? Data()
                 
                 DispatchQueue.main.async {
                     self.imageView.image = UIImage(data: imageData)
-
                 }
-                
                 
             case .failure(let error):
                 self.alert(withTitle: "Image Not Found", andMessage: "There was no image for this location...")
