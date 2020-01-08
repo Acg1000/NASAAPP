@@ -15,6 +15,7 @@ class SinglePageViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var swipeLabel: UILabel!
     
     var type: PageEnum!
     let roverAPIClient = NASAAPIClient()
@@ -34,12 +35,14 @@ class SinglePageViewController: UIViewController {
             descriptionLabel.text = "Chose from a plethora of photos taken from various rovers on the surface of mars to make and email yourself a postcard with that image"
             button.setTitle("Create Rover Postcard", for: .normal)
             imageView.image = #imageLiteral(resourceName: "RoverImage")
+            swipeLabel.text = "Swipe for Earth Imagery ->"
             
         case .earthImagery:
             titleLabel.text = "Earth Imagery"
             descriptionLabel.text = "Scout areas on earth from a map and see am image from that location"
             button.setTitle("Scout Earth", for: .normal)
             imageView.image = #imageLiteral(resourceName: "EarthImage")
+            swipeLabel.text = "<- Swipe for Rover Postcard"
             
         }
         navigationController?.navigationBar.isHidden = true

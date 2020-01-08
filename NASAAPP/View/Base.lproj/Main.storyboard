@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBE-Me-wE1">
-                                <rect key="frame" x="16" y="531" width="382" height="20.5"/>
+                                <rect key="frame" x="16" y="515" width="382" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,6 +67,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-tR-UVI">
+                                <rect key="frame" x="16" y="759.5" width="382" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZUm-rq-0ty"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -75,12 +84,15 @@
                             <constraint firstItem="HBE-Me-wE1" firstAttribute="trailing" secondItem="RJp-TD-AEn" secondAttribute="trailing" id="71u-pc-hW5"/>
                             <constraint firstItem="SI3-ih-U6N" firstAttribute="trailing" secondItem="nQj-LW-sgi" secondAttribute="trailing" constant="16" id="N9c-uX-8Lc"/>
                             <constraint firstItem="DkS-eY-wi1" firstAttribute="leading" secondItem="RJp-TD-AEn" secondAttribute="leading" id="NkP-oF-sjM"/>
+                            <constraint firstItem="DkS-eY-wi1" firstAttribute="top" secondItem="jVx-tR-UVI" secondAttribute="bottom" constant="8" id="Nvj-hZ-5jc"/>
                             <constraint firstItem="nQj-LW-sgi" firstAttribute="top" secondItem="SI3-ih-U6N" secondAttribute="top" constant="16" id="REf-80-PUo"/>
                             <constraint firstItem="SI3-ih-U6N" firstAttribute="trailing" secondItem="RJp-TD-AEn" secondAttribute="trailing" constant="16" id="T4c-MN-pFD"/>
-                            <constraint firstItem="HBE-Me-wE1" firstAttribute="top" secondItem="RJp-TD-AEn" secondAttribute="bottom" constant="32" id="fDw-WH-c79"/>
+                            <constraint firstItem="HBE-Me-wE1" firstAttribute="top" secondItem="RJp-TD-AEn" secondAttribute="bottom" constant="16" id="fDw-WH-c79"/>
                             <constraint firstItem="SI3-ih-U6N" firstAttribute="bottom" secondItem="DkS-eY-wi1" secondAttribute="bottom" constant="16" id="gKb-By-6s3"/>
+                            <constraint firstItem="jVx-tR-UVI" firstAttribute="trailing" secondItem="RJp-TD-AEn" secondAttribute="trailing" id="gv4-0W-xqQ"/>
+                            <constraint firstItem="jVx-tR-UVI" firstAttribute="leading" secondItem="RJp-TD-AEn" secondAttribute="leading" id="lFe-Vx-ZOW"/>
                             <constraint firstItem="DkS-eY-wi1" firstAttribute="trailing" secondItem="RJp-TD-AEn" secondAttribute="trailing" id="leD-B0-x6b"/>
-                            <constraint firstItem="DkS-eY-wi1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HBE-Me-wE1" secondAttribute="bottom" constant="32" id="sMS-ll-ZDi"/>
+                            <constraint firstItem="jVx-tR-UVI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="HBE-Me-wE1" secondAttribute="bottom" constant="32" id="sMS-ll-ZDi"/>
                             <constraint firstItem="RJp-TD-AEn" firstAttribute="leading" secondItem="SI3-ih-U6N" secondAttribute="leading" constant="16" id="ueG-iU-4H5"/>
                             <constraint firstItem="HBE-Me-wE1" firstAttribute="leading" secondItem="RJp-TD-AEn" secondAttribute="leading" id="zWP-oA-0hf"/>
                         </constraints>
@@ -90,6 +102,7 @@
                         <outlet property="button" destination="DkS-eY-wi1" id="egU-MK-BbH"/>
                         <outlet property="descriptionLabel" destination="HBE-Me-wE1" id="fMx-B6-OFv"/>
                         <outlet property="imageView" destination="RJp-TD-AEn" id="6zV-EZ-LwZ"/>
+                        <outlet property="swipeLabel" destination="jVx-tR-UVI" id="5x9-Rt-c10"/>
                         <outlet property="titleLabel" destination="nQj-LW-sgi" id="umz-RH-ScY"/>
                     </connections>
                 </viewController>
