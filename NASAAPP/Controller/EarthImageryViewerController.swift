@@ -55,6 +55,7 @@ class EarthImageryViewController: UIViewController {
         //setup
         mapView.showsUserLocation = true
         locationField.delegate = self
+        navigationController?.navigationBar.isHidden = false
         
         // Keyboard notification manager
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -174,7 +175,6 @@ class EarthImageryViewController: UIViewController {
             
             // Set the placemark
             self.placemark = placemark
-            
         }
         
         // Add the annotation

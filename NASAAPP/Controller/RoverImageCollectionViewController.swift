@@ -12,9 +12,12 @@ private let reuseIdentifier = "roverImageCell"
 
 class RoverImageCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var roverPhotos: [RoverPhoto] = [] {
         didSet {
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.collectionView.reloadData()
                 
             }
@@ -31,6 +34,8 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
         loadRoverData()
         
     }
@@ -45,6 +50,8 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
                 self.roverPhotos = data
                 
             case .failure(let error):
+                self.activityIndicator.stopAnimating()
+
                 switch error {
                 case .invalidData:
                     self.alert(withTitle: "Invalid Data", andMessage: "There was a problem with data processing. Make sure you have a stable internet connection")
@@ -64,30 +71,6 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
         }
     }
     
-    // Takes the URL from the rover data and downloades an image
-//    func downloadRoverImages(forPhoto photo: RoverPhoto, atIndexPath indexPath: IndexPath) {
-//        if let _ = pendingOperations.downloadsInProgress[indexPath] {
-//            return
-//        }
-//
-//        let downloader = ImageDownloader(nasaData: photo)
-//
-//        downloader.completionBlock = {
-//            if downloader.isCancelled {
-//                return
-//            }
-//
-//            DispatchQueue.main.async {
-//                print("Artwork Download Finished!")
-//                self.pendingOperations.downloadsInProgress.removeValue(forKey: indexPath)
-//                self.collectionView.reloadItems(at: [indexPath])
-//            }
-//        }
-//
-//        pendingOperations.downloadsInProgress[indexPath] = downloader
-//        pendingOperations.downloadQueue.addOperation(downloader)
-//    }
-    
     // Creates and presents an alert
     func alert(withTitle title: String, andMessage message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -103,7 +86,6 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return roverPhotos.count
     }
@@ -114,10 +96,6 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
         
         cell.configureCell(withPhoto: currentPhoto)
         
-//        if currentPhoto.imageState == .placeholder {
-//            downloadRoverImages(forPhoto: currentPhoto, atIndexPath: indexPath)
-//        }
-    
         return cell
     }
 
@@ -131,8 +109,9 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
     
     
     // MARK: FLOW LAYOUT
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 150, height: 150)
-    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return .init(width: 150, height: 150)
+//    }
+        
 }
