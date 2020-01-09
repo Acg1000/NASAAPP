@@ -60,7 +60,7 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
                     // I want the app to crash if there was a conversion failure
                     fatalError("Json conversion error: \(error)")
                     
-                case .requestFailed, .responseUnsuccessful:
+                case .requestFailed, .responseUnsuccessful, .networkerError:
                     DispatchQueue.main.async {
                         self.navigationController?.popViewController(animated: true)
 

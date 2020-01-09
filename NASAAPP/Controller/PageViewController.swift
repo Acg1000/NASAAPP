@@ -9,7 +9,7 @@
 
 import UIKit
 
-class InitialPageViewController: UIPageViewController {
+class PageViewController: UIPageViewController {
     
     var orderedViewControllers: [SinglePageViewController] = []
 
@@ -44,7 +44,7 @@ class InitialPageViewController: UIPageViewController {
 // MARK: DATA SOURCE
 
 // Extends the controller to act as the pageview's data source. Adds functionality for swiping between screens
-extension InitialPageViewController: UIPageViewControllerDataSource {
+extension PageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController as! SinglePageViewController) else {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension JSONDecoder {
     static var dataDecoder: JSONDecoder {

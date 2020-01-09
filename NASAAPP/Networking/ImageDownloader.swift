@@ -30,18 +30,26 @@ class ImageDownloader: Operation {
         comps.scheme = "https"
         let https = comps.url!
         
-        let imageData = try! Data(contentsOf: https)
-        
-        if self.isCancelled {
-            return
-        }
-        
-        if imageData.count > 0 {
-            nasaData.image = UIImage(data: imageData)
-            nasaData.imageState = .downloaded
-            
-        } else {
-            nasaData.imageState = .failed
+        // Make a network call asking for the image
+        Networker.request(url: URLRequest(url: https)) { result in
+            do {
+                let imageData = try result.get()
+                
+                if self.isCancelled {
+                    return
+                }
+                
+                if imageData.count > 0 {
+                    self.nasaData.image = UIImage(data: imageData)
+                    self.nasaData.imageState = .downloaded
+                    
+                } else {
+                    self.nasaData.imageState = .failed
+                }
+                
+            } catch {
+                self.nasaData.imageState = .failed
+            }
         }
     }
 }
