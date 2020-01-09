@@ -180,12 +180,12 @@
 		FBC347B223C14AF700F77CBE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				FB82B26123C642FF008C388B /* Networker.swift */,
 				FBC347B523C14B8600F77CBE /* APIClient.swift */,
 				FBC347B923C1540A00F77CBE /* Endpoint.swift */,
 				FB0A5AB223C3DC1F00980A23 /* NASAAPIClient.swift */,
 				FBB2C81123C1AE0B00A7CA10 /* ImageDownloader.swift */,
 				FBB2C81923C1C12600A7CA10 /* PendingOperations.swift */,
-				FB82B26123C642FF008C388B /* Networker.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";

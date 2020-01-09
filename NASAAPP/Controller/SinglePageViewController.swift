@@ -16,6 +16,7 @@ class SinglePageViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var swipeLabel: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var type: PageEnum!
     let roverAPIClient = NASAAPIClient()

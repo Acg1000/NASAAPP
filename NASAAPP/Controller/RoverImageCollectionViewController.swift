@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RoverImageCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class RoverImageCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -98,9 +98,9 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
     
     
     // MARK: FLOW LAYOUT
-//
+
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return .init(width: 150, height: 150)
 //    }
-        
+//        
 }
