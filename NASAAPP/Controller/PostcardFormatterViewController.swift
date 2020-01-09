@@ -81,14 +81,6 @@ class PostcardFormatterViewController: UIViewController {
         }
     }
     
-    func alert(withTitle title: String, andMessage message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    
     // These two functions allow the keyboard to push the view upwards
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {

@@ -65,13 +65,6 @@ class EarthImageryViewController: UIViewController {
     
     
     // MARK: Helper Functions
-    // Creates alert
-    func alert(withTitle title: String, andMessage message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
     
     @IBAction func currentLocationButtonPressed(_ sender: Any) {
         locationManager.requestLocation()

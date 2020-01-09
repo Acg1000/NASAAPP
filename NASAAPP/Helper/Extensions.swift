@@ -16,3 +16,15 @@ extension JSONDecoder {
         return decoder
     }
 }
+
+
+extension UIViewController {
+    
+    // Creates and presents an alert
+    func alert(withTitle title: String, andMessage message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+}

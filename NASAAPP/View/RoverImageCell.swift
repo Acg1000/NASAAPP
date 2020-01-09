@@ -9,7 +9,8 @@
 import UIKit
 
 class RoverImageCell: UICollectionViewCell {
-    static let reuseIdentifier = String(describing: RoverImageCell.self)
+    static let reuseIdentifier = "roverImageCell"
+
     var imageDownloader: ImageDownloader!
     let operationQueue = OperationQueue()
     

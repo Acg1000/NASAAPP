@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "roverImageCell"
-
 class RoverImageCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -71,15 +69,6 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
         }
     }
     
-    // Creates and presents an alert
-    func alert(withTitle title: String, andMessage message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "dismiss", style: .cancel, handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -91,7 +80,7 @@ class RoverImageCollectionViewController: UICollectionViewController, UICollecti
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RoverImageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoverImageCell.reuseIdentifier, for: indexPath) as! RoverImageCell
         let currentPhoto = roverPhotos[indexPath.row]
         
         cell.configureCell(withPhoto: currentPhoto)
