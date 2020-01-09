@@ -22,11 +22,11 @@ class RoverImageCell: UICollectionViewCell {
             label.text = data.earthDate
             topLabel.isHidden = true
             
-            let imageDownloader = ImageDownloader(url: data.imgSrc)
+            imageDownloader = ImageDownloader(url: data.imgSrc)
             imageDownloader.completionBlock = {
                 DispatchQueue.main.async {
                     
-                    guard let image = imageDownloader.image else { return }
+                    guard let image = self.imageDownloader.image else { return }
                     
                     let scale = 150 / image.size.width
                     let newHeight = image.size.height * scale

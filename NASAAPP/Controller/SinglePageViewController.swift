@@ -25,7 +25,6 @@ class SinglePageViewController: UIViewController {
         super.viewDidLoad()
 
         setupView(type: type)
-
     }
     
     // Function that setsup the view depending on the type of page that it is
